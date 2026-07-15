@@ -20,6 +20,21 @@ html,body{overflow-x:hidden}
 @media(max-width:640px){.shell{width:min(100% - 22px,1180px)}.site-header{position:relative}.header-inner{min-height:70px}.brand small{max-width:210px}.header-line{display:none}.shipping-strip{align-items:flex-start;flex-wrap:wrap;gap:2px 8px;font-size:12px}.shipping-strip span:last-child{flex-basis:100%}.hero{min-height:auto;padding-block:42px 38px}.hero h1{font-size:39px}.hero-copy>p{font-size:16px}.hero-actions{align-items:stretch;flex-direction:column}.button{width:100%}.hero-points{display:grid;gap:6px}.hero-visual{min-height:405px}.hero-card{width:72%;border-radius:18px}.hero-card-front{left:4%;top:20px}.hero-card-back{top:0}.hero-badge{right:0;bottom:18px}.trust{margin-bottom:56px}.section-heading h2,.closing h2{font-size:32px}.category-tabs{top:8px;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding:9px;border-radius:15px;scrollbar-width:none}.category-tabs::-webkit-scrollbar{display:none}.category-tabs button{white-space:nowrap;padding:9px 14px}.catalog-meta p:last-child{display:none}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-card{border-radius:15px}.product-card .card-body{padding:10px}.product-card strong{font-size:12px}.closing{padding:25px 20px;margin-bottom:95px}.footer-inner{align-items:flex-start;flex-direction:column;padding-block:32px}.footer-inner a{text-align:left}.mobile-line{display:flex;position:fixed;z-index:40;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));align-items:center;justify-content:center;gap:10px;min-height:53px;border-radius:999px;text-decoration:none;color:white;background:#00b900;font-weight:900;box-shadow:0 12px 35px rgba(0,0,0,.4)}.mobile-line span{padding:3px 7px;border-radius:6px;color:#00a800;background:white;font-size:12px}.lightbox{width:100%;max-height:100vh;border:0;border-radius:0}.lightbox figure{height:100vh}.lightbox figcaption{padding-bottom:max(14px,env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
+.shipping-rates{display:grid;grid-template-columns:minmax(300px,.86fr) minmax(0,1.14fr);gap:34px;align-items:center;margin-bottom:82px;padding:30px;border:1px solid rgba(119,231,244,.22);border-radius:28px;background:radial-gradient(circle at 100% 0,rgba(240,190,62,.1),transparent 26rem),linear-gradient(145deg,rgba(12,65,80,.82),rgba(5,27,43,.94));box-shadow:var(--shadow)}
+.shipping-rates-media{display:block;overflow:hidden;border-radius:21px;border:1px solid rgba(255,255,255,.16);background:#061a2e;box-shadow:0 18px 45px rgba(0,0,0,.24)}
+.shipping-rates-media img{display:block;width:100%;height:auto}
+.shipping-rates-copy h2{margin:.22em 0 .3em;font-size:clamp(30px,4vw,46px);line-height:1.18}
+.shipping-rates-copy>p{margin:0;color:var(--muted)}
+.shipping-highlights{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.shipping-highlights span{padding:7px 12px;border:1px solid rgba(119,231,244,.27);border-radius:999px;color:#dffbff;background:rgba(11,89,96,.34);font-size:13px;font-weight:750}
+.shipping-note{margin:0 0 22px;padding:17px 18px;border-left:3px solid var(--gold);border-radius:0 15px 15px 0;background:rgba(2,17,29,.48);color:#dbe8eb}
+.shipping-note p{margin:0 0 8px}.shipping-note p:last-child{margin-bottom:0}.shipping-note strong{color:var(--gold-2)}
+.shipping-disclaimer{font-size:12px;color:#9eb2b8!important}
+.shipping-video-button{border-color:rgba(119,231,244,.36);background:linear-gradient(135deg,#164c59,#173a52);color:#effcff;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.shipping-video-button span{color:#a9e8eb}
+@media(max-width:920px){.shipping-rates{grid-template-columns:1fr;padding:24px}.shipping-rates-media{width:min(560px,100%);margin-inline:auto}}
+@media(max-width:640px){.shipping-rates{gap:23px;margin-bottom:62px;padding:15px;border-radius:20px}.shipping-rates-copy{padding:0 4px 6px}.shipping-rates-copy h2{font-size:31px}.shipping-video-button{width:100%}}
+
 </style>
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -77,6 +92,26 @@ html,body{overflow-x:hidden}
       <article><span>10 กก.</span><div><strong>ขั้นต่ำจัดส่ง</strong><small>คละรายการตามเงื่อนไขร้าน</small></div></article>
       <article><span>ทุกวัน</span><div><strong>รอบจัดส่งทั่วไทย</strong><small>พื้นที่ไกลเช็กจุดลงสินค้าอีกครั้ง</small></div></article>
       <article><span>LINE</span><div><strong>ปิดการขายกับทีมจริง</strong><small>สอบถามและสั่งซื้อได้สะดวก</small></div></article>
+    </section>
+
+    <section id="shipping-rates" class="shipping-rates shell" aria-labelledby="shipping-rates-title">
+      <a class="shipping-rates-media" href="assets/shipping-rates.webp" target="_blank" rel="noopener" aria-label="เปิดดูตารางค่าขนส่งแบบเต็มภาพ">
+        <img src="assets/shipping-rates.webp" alt="ตารางค่าขนส่งและค่าโฟม BMF Seafood ตามน้ำหนักสินค้า" width="1024" height="1536" loading="lazy">
+      </a>
+      <div class="shipping-rates-copy">
+        <span class="eyebrow">จัดส่งทั่วประเทศ</span>
+        <h2 id="shipping-rates-title">ข้อมูลค่าขนส่งและค่าโฟม</h2>
+        <p>โฟมทุกขนาดราคาเดียว 70 บาท ยิ่งสั่งหลายกิโล ต้นทุนแพ็กและขนส่งเฉลี่ยต่อกิโลยิ่งคุ้ม</p>
+        <div class="shipping-highlights" aria-label="จุดเด่นการจัดส่ง">
+          <span>ขั้นต่ำ 10 กก.</span><span>จัดส่งทั่วไทย</span><span>โฟมเก็บความเย็น</span>
+        </div>
+        <div class="shipping-note">
+          <p><strong>ภาคใต้:</strong> เฉพาะค่าขนส่งเริ่มต้นประมาณ 150 บาท และบางพื้นที่อาจอยู่ที่ 200–250 บาท</p>
+          <p><strong>อำเภอหรือพื้นที่ห่างไกล:</strong> กรุณาสอบถามค่าขนส่งและจุดลงสินค้ากับแอดมินอีกครั้งก่อนสั่งซื้อ</p>
+          <p class="shipping-disclaimer">ค่าขนส่งจริงขึ้นอยู่กับน้ำหนัก ปลายทาง และรอบรถ กรุณายืนยันกับแอดมินก่อนชำระเงิน</p>
+        </div>
+        <a class="button shipping-video-button track-shipping-video" href="https://www.facebook.com/reel/561363103551270" target="_blank" rel="noopener">ดูคลิปอธิบายเรื่องการขนส่ง <span aria-hidden="true">▶</span></a>
+      </div>
     </section>
 
     <section class="catalog shell" aria-labelledby="catalog-title">
@@ -198,6 +233,7 @@ document.querySelector('.lightbox-close').addEventListener('click',closeLightbox
 
 document.querySelectorAll('.track-line').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('track','Contact',{content_name:'LINE Official'})}));
 document.querySelectorAll('.track-review').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('trackCustom','ViewProductReview',{destination:'Openlink BMF'})}));
+document.querySelectorAll('.track-shipping-video').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('trackCustom','ViewShippingVideo',{destination:'Facebook Reel'})}));
 window.addEventListener('error',event=>{if(event.target instanceof HTMLImageElement&&event.target.src.includes('drive.google.com/thumbnail')){event.target.closest('.product-card')?.classList.add('remote-image-error');event.target.alt+=' — หากภาพไม่แสดง กรุณาเปิดโฟลเดอร์ราคา'}} ,true);
 render();
 
