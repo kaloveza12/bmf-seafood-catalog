@@ -168,7 +168,7 @@ const fallbackProducts=[
   {id:'P04',title:'สะโพกสไลด์และชาบูสไลด์',src:driveImage('1Rb_5gNlQckr0E8wLtJaIz3t26lmOokzV'),categories:['pork']},
   {id:'P05',title:'งานแปรรูปราคาคุ้ม',src:'assets/pork-p05.webp',categories:['pork'],fit:'contain'},
   {id:'P06',title:'หมูสองชั้น',src:driveImage('1BZ0q2ZwKFQ2x3txUJubi_ipymJRkQTxB'),categories:['pork']},
-  {id:'P07',title:'หมูแท้สไลด์',src:'assets/pork-sliced.webp',categories:['pork'],fit:'contain'},
+  {id:'P07',title:'หมูแท้สไลด์',src:'assets/pork-sliced-updated.webp',categories:['pork'],fit:'contain'},
   {id:'P08',title:'ตับสไลด์',src:'assets/pork-liver-sliced.webp',categories:['pork'],fit:'contain'},
 
   // เนื้อ
@@ -238,10 +238,12 @@ document.querySelectorAll('.track-review').forEach(link=>link.addEventListener('
 document.querySelectorAll('.track-shipping-video').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('trackCustom','ViewShippingVideo',{destination:'Facebook Reel'})}));
 window.addEventListener('error',event=>{if(event.target instanceof HTMLImageElement&&event.target.src.includes('drive.google.com/thumbnail')){event.target.closest('.product-card')?.classList.add('remote-image-error');event.target.alt+=' — หากภาพไม่แสดง กรุณาเปิดโฟลเดอร์ราคา'}} ,true);
 function normalizeCatalogProduct(product){
-  if(!product||typeof product.id!=='string'||typeof product.title!=='string'||typeof product.src!=='string')return null;
+  if(!product||typeof product.id!=='string'||typeof product.title!=='string')return null;
   const categories=Array.isArray(product.categories)?product.categories.filter(category=>labels[category]):[];
   if(!categories.length)return null;
-  const src=product.src.startsWith('/')?product.src.slice(1):product.src;
+  const rawSrc=typeof product.src==='string'&&product.src.trim()?product.src:product.legacySrc;
+  if(typeof rawSrc!=='string'||!rawSrc.trim())return null;
+  const src=rawSrc.startsWith('/')?rawSrc.slice(1):rawSrc;
   return {id:product.id.trim(),title:product.title.trim(),src,categories,fit:product.fit==='contain'?'contain':'cover'};
 }
 async function loadCatalog(){

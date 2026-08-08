@@ -2,6 +2,10 @@ media:
   input: assets
   output: /assets
 
+settings:
+  content:
+    merge: true
+
 content:
   - name: catalog
     label: รายการสินค้าและใบราคา
@@ -23,9 +27,15 @@ content:
             type: string
             required: true
           - name: src
-            label: ภาพใบราคา
+            label: ภาพใบราคาใหม่
             type: image
-            required: true
+            description: อัปโหลด WebP, JPG หรือ PNG หรือเลือกภาพเดิมจาก Media
+            options:
+              extensions: [webp, jpg, jpeg, png]
+          - name: legacySrc
+            label: ลิงก์ภาพเดิมจาก Google Drive
+            type: string
+            hidden: true
           - name: categories
             label: หมวดหมู่
             type: select
@@ -57,4 +67,3 @@ content:
                   label: แสดงเต็มใบ (แนะนำสำหรับใบราคา)
                 - value: cover
                   label: เติมเต็มกรอบและยอมให้ภาพถูกตัด
-
