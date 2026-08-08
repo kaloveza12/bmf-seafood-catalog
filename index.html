@@ -160,7 +160,7 @@ html,body{overflow-x:hidden}
 const DRIVE_FOLDER='https://drive.google.com/drive/folders/1rvKSvNDWlSyFdHASccVQ2juXro86b4Hk?usp=sharing';
 const driveImage=id=>`https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
 
-const products=[
+const fallbackProducts=[
   // หมู
   {id:'P01',title:'หมูหมัก',src:'assets/pork-p01.webp',categories:['pork'],fit:'contain'},
   {id:'P02',title:'สามชั้นหมัก',src:'assets/pork-p02.webp',categories:['pork'],fit:'contain'},
@@ -214,6 +214,8 @@ const products=[
   {id:'C02',title:'น้ำจิ้ม',src:'assets/dipping-sauces.webp',categories:['sauce'],fit:'contain'}
 ];
 
+let products=fallbackProducts;
+
 const labels={pork:'หมู',beef:'เนื้อ',frozen:'ของแช่ฟรีส',seafood:'ทะเล',meatballs:'ลูกชิ้นต่างๆ',fried:'ของทอด',sauce:'น้ำจิ้มและหัวเชื้อน้ำซุป',all:'ตารางราคาทั้งหมด'};
 let activeCategory='pork';let filtered=[];let lightboxIndex=0;
 const grid=document.querySelector('#productGrid');const count=document.querySelector('#resultCount');const empty=document.querySelector('#emptyState');const search=document.querySelector('#searchInput');
@@ -234,7 +236,28 @@ document.querySelectorAll('.track-line').forEach(link=>link.addEventListener('cl
 document.querySelectorAll('.track-review').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('trackCustom','ViewProductReview',{destination:'Openlink BMF'})}));
 document.querySelectorAll('.track-shipping-video').forEach(link=>link.addEventListener('click',()=>{if(typeof fbq==='function')fbq('trackCustom','ViewShippingVideo',{destination:'Facebook Reel'})}));
 window.addEventListener('error',event=>{if(event.target instanceof HTMLImageElement&&event.target.src.includes('drive.google.com/thumbnail')){event.target.closest('.product-card')?.classList.add('remote-image-error');event.target.alt+=' — หากภาพไม่แสดง กรุณาเปิดโฟลเดอร์ราคา'}} ,true);
-render();
+function normalizeCatalogProduct(product){
+  if(!product||typeof product.id!=='string'||typeof product.title!=='string'||typeof product.src!=='string')return null;
+  const categories=Array.isArray(product.categories)?product.categories.filter(category=>labels[category]):[];
+  if(!categories.length)return null;
+  const src=product.src.startsWith('/')?product.src.slice(1):product.src;
+  return {id:product.id.trim(),title:product.title.trim(),src,categories,fit:product.fit==='contain'?'contain':'cover'};
+}
+async function loadCatalog(){
+  render();
+  try{
+    const response=await fetch('catalog.json',{cache:'no-store'});
+    if(!response.ok)throw new Error(`Catalog request failed: ${response.status}`);
+    const data=await response.json();
+    const nextProducts=Array.isArray(data.products)?data.products.map(normalizeCatalogProduct).filter(Boolean):[];
+    if(!nextProducts.length)throw new Error('Catalog has no valid products');
+    products=nextProducts;
+    render();
+  }catch(error){
+    console.warn('Using built-in catalog fallback',error);
+  }
+}
+loadCatalog();
 
 </script>
 </body>

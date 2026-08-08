@@ -1,0 +1,60 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: catalog
+    label: รายการสินค้าและใบราคา
+    type: file
+    path: catalog.json
+    format: json
+    fields:
+      - name: products
+        label: รายการสินค้า
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: รหัสภาพ
+            type: string
+            required: true
+          - name: title
+            label: ชื่อที่แสดงบนเว็บ
+            type: string
+            required: true
+          - name: src
+            label: ภาพใบราคา
+            type: image
+            required: true
+          - name: categories
+            label: หมวดหมู่
+            type: select
+            required: true
+            options:
+              multiple: true
+              values:
+                - value: pork
+                  label: หมู
+                - value: beef
+                  label: เนื้อ
+                - value: frozen
+                  label: ของแช่ฟรีส
+                - value: seafood
+                  label: ทะเล
+                - value: meatballs
+                  label: ลูกชิ้นต่าง ๆ
+                - value: fried
+                  label: ของทอด
+                - value: sauce
+                  label: น้ำจิ้มและหัวเชื้อน้ำซุป
+          - name: fit
+            label: รูปแบบการแสดงภาพ
+            type: select
+            default: contain
+            options:
+              values:
+                - value: contain
+                  label: แสดงเต็มใบ (แนะนำสำหรับใบราคา)
+                - value: cover
+                  label: เติมเต็มกรอบและยอมให้ภาพถูกตัด
+
