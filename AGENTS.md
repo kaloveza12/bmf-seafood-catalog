@@ -7,6 +7,7 @@
 - Preserve `CNAME`; it connects the custom domain.
 - The site is a static single-page catalog. Most content, CSS, and JavaScript are in `index.html`.
 - Primary product records are in `catalog.json`, managed by Pages CMS via `.pages.yml`. Local images live in `assets/`.
+- Product images prefer `src`. Legacy Google Drive URLs are stored in hidden `legacySrc` so Pages CMS image validation does not block saves; preserve `legacySrc` as a backup when adding a replacement `src`.
 - `index.html` retains a built-in fallback catalog. Keep it functional so a malformed or unavailable `catalog.json` never blanks the live site.
 - When making product changes in code, update `catalog.json` first and keep the fallback catalog in `index.html` reasonably synchronized.
 - The admin gateway is `admin.html`; authentication and editing happen through Pages CMS with GitHub access.
