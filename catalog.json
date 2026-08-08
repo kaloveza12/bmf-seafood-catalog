@@ -62,6 +62,15 @@
       "fit": "contain"
     },
     {
+      "id": "P08",
+      "title": "ตับสไลด์",
+      "src": "assets/pork-liver-sliced.webp",
+      "categories": [
+        "pork"
+      ],
+      "fit": "contain"
+    },
+    {
       "id": "B01",
       "title": "เนื้อสำหรับร้านหมูกระทะและชาบู",
       "src": "https://drive.google.com/thumbnail?id=1_RmFPxZpbA4vFHc3qvaIN34qODbZUffd&sz=w1600",
