@@ -30,10 +30,12 @@
     {
       "id": "P04",
       "title": "สะโพกสไลด์และชาบูสไลด์",
+      "src": "assets/pork-p04-updated.webp",
       "categories": [
         "pork"
       ],
-      "legacySrc": "https://drive.google.com/thumbnail?id=1Rb_5gNlQckr0E8wLtJaIz3t26lmOokzV&sz=w1600"
+      "legacySrc": "https://drive.google.com/thumbnail?id=1Rb_5gNlQckr0E8wLtJaIz3t26lmOokzV&sz=w1600",
+      "fit": "contain"
     },
     {
       "id": "P05",
@@ -47,10 +49,12 @@
     {
       "id": "P06",
       "title": "หมูสองชั้น",
+      "src": "assets/pork-p06-updated.webp",
       "categories": [
         "pork"
       ],
-      "legacySrc": "https://drive.google.com/thumbnail?id=1BZ0q2ZwKFQ2x3txUJubi_ipymJRkQTxB&sz=w1600"
+      "legacySrc": "https://drive.google.com/thumbnail?id=1BZ0q2ZwKFQ2x3txUJubi_ipymJRkQTxB&sz=w1600",
+      "fit": "contain"
     },
     {
       "id": "P07",
