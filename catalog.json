@@ -49,7 +49,7 @@
     {
       "id": "P06",
       "title": "หมูสองชั้น",
-      "src": "assets/pork-p06-updated.webp",
+      "src": "assets/pork-p06.webp",
       "categories": [
         "pork"
       ],
@@ -77,11 +77,29 @@
     {
       "id": "B01",
       "title": "เนื้อสำหรับร้านหมูกระทะและชาบู",
-      "src": "assets/beef-b01-updated.webp",
+      "src": "assets/beef-b01.webp",
       "categories": [
         "beef"
       ],
       "legacySrc": "https://drive.google.com/thumbnail?id=1_RmFPxZpbA4vFHc3qvaIN34qODbZUffd&sz=w1600",
+      "fit": "contain"
+    },
+    {
+      "id": "B02",
+      "title": "เนื้อสไลด์ แพ็ก 250 กรัม",
+      "src": "assets/beef-b02-sliced-250g.webp",
+      "categories": [
+        "beef"
+      ],
+      "fit": "contain"
+    },
+    {
+      "id": "B03",
+      "title": "เนื้อสไลด์ แพ็ก 500 กรัม",
+      "src": "assets/beef-b03-sliced-500g.webp",
+      "categories": [
+        "beef"
+      ],
       "fit": "contain"
     },
     {
