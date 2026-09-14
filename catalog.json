@@ -3,7 +3,7 @@
     {
       "id": "P01",
       "title": "หมูหมัก",
-      "src": "/assets/pork-p01.webp",
+      "src": "/assets/หมูหมัก.jpg",
       "categories": [
         "pork"
       ],
@@ -21,7 +21,7 @@
     {
       "id": "P03",
       "title": "หมูงานแปรรูป",
-      "src": "/assets/pork-p03.webp",
+      "src": "/assets/งานแรป.jpg",
       "categories": [
         "pork"
       ],
