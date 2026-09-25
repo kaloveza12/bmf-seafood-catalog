@@ -17,9 +17,13 @@
   }
   async function uploadDataUrl(dataUrl,id){
     if(!client||!dataUrl?.startsWith('data:'))return dataUrl;
-    const blob=await fetch(dataUrl).then(r=>r.blob()),path=`${id}-${Date.now()}.webp`;
+    const sourceBlob=await fetch(dataUrl).then(r=>r.blob());
+    if(!sourceBlob.size)throw new Error('ไฟล์รูปว่างเปล่าหรืออ่านไม่ได้');
+    // Safari/PWA บางรุ่นคืน PNG แม้ canvas ขอ WebP ทำให้ Storage ปฏิเสธ MIME
+    // กำหนดชนิดของ payload ที่อัปโหลดให้ตรงกับ bucket โดยคงข้อมูลรูปที่ browser สร้างไว้
+    const blob=sourceBlob.type==='image/webp'?sourceBlob:new Blob([await sourceBlob.arrayBuffer()],{type:'image/webp'}),path=`${id}-${Date.now()}.webp`;
     const {error}=await client.storage.from('product-images').upload(path,blob,{contentType:'image/webp',upsert:false,cacheControl:'31536000'});
-    if(error)throw error;
+    if(error){if(String(error.message).toLowerCase().includes('mime type'))throw new Error('เครื่องยังใช้ไฟล์รูปเวอร์ชันเก่า กรุณาปิดแอปแล้วเปิดใหม่');throw error}
     return client.storage.from('product-images').getPublicUrl(path).data.publicUrl;
   }
   function subscribe(onProducts){
