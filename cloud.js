@@ -12,8 +12,8 @@
     if(!client)throw new Error('ยังเชื่อมฐานข้อมูลไม่ได้');
     const {data:{user}}=await client.auth.getUser();
     if(!user)throw new Error('กรุณาล็อกอินแอดมิน');
-    const {error}=await client.from('store_state').update({products,updated_at:new Date().toISOString(),updated_by:user.id}).eq('id','products');
-    if(error)throw error;
+    const {data,error}=await client.from('store_state').update({products,updated_at:new Date().toISOString(),updated_by:user.id}).eq('id','products').select('id').single();
+    if(error||!data)throw error||new Error('บัญชีนี้ไม่มีสิทธิ์บันทึกข้อมูลออนไลน์');
   }
   async function uploadDataUrl(dataUrl,id){
     if(!client||!dataUrl?.startsWith('data:'))return dataUrl;
