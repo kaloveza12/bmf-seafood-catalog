@@ -29,7 +29,8 @@
     }).subscribe();
   }
   async function signIn(email){
-    const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:`${location.origin}/adminbmf30/`}});
+    email=String(email).trim().toLowerCase();
+    const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:`${location.origin}/adminbmf30/`,shouldCreateUser:true}});
     if(error)throw error;
   }
   async function session(){return client?(await client.auth.getSession()).data.session:null}
