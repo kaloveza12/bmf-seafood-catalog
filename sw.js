@@ -1,4 +1,4 @@
-const CACHE='bmf-pwa-v18';
+const CACHE='bmf-pwa-v19';
 const SHELL=['/','/index.html','/order/','/order/index.html','/order/products.js','/adminbmf30/','/adminbmf30/index.html','/adminbmf30/manifest.webmanifest','/manifest.webmanifest','/pwa-install.js','/cloud.js','/icons/icon-192.png','/icons/icon-512.png','/order/images/bmf-bear-transparent.webp'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()).then(()=>self.clients.matchAll({type:'window'})).then(clients=>Promise.all(clients.map(client=>client.navigate(client.url))))));
