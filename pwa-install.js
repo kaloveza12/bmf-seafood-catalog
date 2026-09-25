@@ -1,5 +1,5 @@
 (()=>{
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));
+  if('serviceWorker'in navigator){let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});window.addEventListener('load',async()=>{const registration=await navigator.serviceWorker.register('/sw.js');const checkUpdate=()=>registration.update().catch(()=>{});checkUpdate();setInterval(checkUpdate,300000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkUpdate()});window.addEventListener('online',checkUpdate)})}
   if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
   let promptEvent=null;
   const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
