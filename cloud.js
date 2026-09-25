@@ -19,6 +19,7 @@
     if(!client||!dataUrl?.startsWith('data:'))return dataUrl;
     const sourceBlob=await fetch(dataUrl).then(r=>r.blob());
     if(!sourceBlob.size)throw new Error('ไฟล์รูปว่างเปล่าหรืออ่านไม่ได้');
+    if(sourceBlob.size>950000)throw new Error('รูปมีขนาดใหญ่เกิน 1 MB กรุณาปิดแอป เปิดใหม่ แล้วเลือกรูปอีกครั้ง');
     // Safari/PWA บางรุ่นคืน PNG แม้ canvas ขอ WebP ทำให้ Storage ปฏิเสธ MIME
     // กำหนดชนิดของ payload ที่อัปโหลดให้ตรงกับ bucket โดยคงข้อมูลรูปที่ browser สร้างไว้
     const blob=sourceBlob.type==='image/webp'?sourceBlob:new Blob([await sourceBlob.arrayBuffer()],{type:'image/webp'}),path=`${id}-${Date.now()}.webp`;
