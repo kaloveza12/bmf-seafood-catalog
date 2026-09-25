@@ -33,7 +33,19 @@
     const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:`${location.origin}/adminbmf30/`,shouldCreateUser:true}});
     if(error)throw error;
   }
+  async function signInPassword(email,password){
+    email=String(email).trim().toLowerCase();
+    const {data,error}=await client.auth.signInWithPassword({email,password});
+    if(error)throw error;
+    return data.session;
+  }
+  async function updatePassword(password){
+    if(String(password).length<6)throw new Error('รหัสผ่านต้องมีอย่างน้อย 6 ตัว');
+    const {data,error}=await client.auth.updateUser({password:String(password)});
+    if(error)throw error;
+    return data.user;
+  }
   async function session(){return client?(await client.auth.getSession()).data.session:null}
   async function signOut(){if(client)await client.auth.signOut()}
-  window.BMFCloud={client,loadProducts,saveProducts,uploadDataUrl,subscribe,signIn,session,signOut};
+  window.BMFCloud={client,loadProducts,saveProducts,uploadDataUrl,subscribe,signIn,signInPassword,updatePassword,session,signOut};
 })();
