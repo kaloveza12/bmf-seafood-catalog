@@ -1,0 +1,20 @@
+{
+  "name": "BMF Seafood สั่งซื้อวัตถุดิบ",
+  "short_name": "BMF Seafood",
+  "description": "ดูราคา เลือกสินค้า และส่งใบสั่งซื้อวัตถุดิบสำหรับร้านอาหาร",
+  "lang": "th",
+  "start_url": "/order/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f6f1",
+  "theme_color": "#0d6b42",
+  "icons": [
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ],
+  "shortcuts": [
+    {"name":"สั่งซื้อสินค้า","short_name":"สั่งซื้อ","url":"/order/","icons":[{"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"}]},
+    {"name":"ดูราคาสินค้า","short_name":"ดูราคา","url":"/","icons":[{"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"}]}
+  ]
+}
