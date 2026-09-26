@@ -372,6 +372,15 @@
         "sauce"
       ],
       "fit": "contain"
+    },
+    {
+      "id": "P09",
+      "title": "งานสไลด์ชาบู",
+      "src": "/assets/งานสไลด์ชาบู.jpg",
+      "categories": [
+        "pork"
+      ],
+      "fit": "contain"
     }
   ]
 }
