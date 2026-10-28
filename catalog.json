@@ -85,18 +85,9 @@
       "fit": "contain"
     },
     {
-      "id": "B02",
-      "title": "เนื้อสไลด์ แพ็ก 250 กรัม",
-      "src": "/assets/beef-b02-sliced-250g.webp",
-      "categories": [
-        "beef"
-      ],
-      "fit": "contain"
-    },
-    {
       "id": "B03",
       "title": "เนื้อสไลด์ แพ็ก 500 กรัม",
-      "src": "/assets/beef-b03-sliced-500g.webp",
+      "src": "/assets/Premium Beef Slices Price Poster.png",
       "categories": [
         "beef"
       ],
