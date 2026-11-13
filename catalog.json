@@ -383,6 +383,15 @@
         "beef"
       ],
       "fit": "contain"
+    },
+    {
+      "id": "เกรดถูกแรป",
+      "title": "เกรดถูก",
+      "src": "/assets/f5180f94-e62d-4285-af65-015eed63db23.png",
+      "categories": [
+        "pork"
+      ],
+      "fit": "contain"
     }
   ]
 }
