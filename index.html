@@ -52,7 +52,7 @@ html,body{overflow-x:hidden}
 .shipping-video-button span{color:#a9e8eb}
 @media(max-width:920px){.shipping-rates{grid-template-columns:1fr;padding:24px}.shipping-rates-media{width:min(560px,100%);margin-inline:auto}}
 @media(max-width:640px){.shipping-rates{gap:23px;margin-bottom:62px;padding:15px;border-radius:20px}.shipping-rates-copy{padding:0 4px 6px}.shipping-rates-copy h2{font-size:31px}.shipping-video-button{width:100%}}
-.search-content{margin-bottom:82px;padding:34px;border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.05)}.search-content h2{margin:.15em 0 .4em;font-size:clamp(29px,4vw,44px)}.search-content>p,.business-summary p,.business-summary li{max-width:900px;color:var(--muted)}.text-product-grid,.service-link-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}.text-product-grid article,.service-link-grid a{padding:16px;border:1px solid var(--line);border-radius:15px;background:rgba(3,18,30,.42)}.text-product-grid h3{margin:0 0 5px;color:var(--gold-2);font-size:17px}.text-product-grid p{margin:0;color:var(--muted);font-size:14px}.service-link-grid a{text-decoration:none;color:#e9f7fa;font-weight:800}.service-link-grid a:hover{border-color:rgba(240,190,62,.5)}.business-summary{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}.business-summary a{color:var(--gold-2)}.business-summary ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}.seo-footer-links{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:12px}.seo-footer-links a{text-align:left!important;font-size:13px}@media(max-width:800px){.text-product-grid,.service-link-grid,.business-summary ul{grid-template-columns:1fr}.search-content{padding:23px}}
+.search-content{margin-bottom:64px;padding:30px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.045)}.search-content h2{max-width:850px;margin:.12em 0 .35em;font-size:clamp(27px,3.4vw,39px)}.search-content>p,.business-summary p{max-width:900px;margin:0;color:var(--muted)}.text-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0 26px}.text-product-grid article{padding:15px;border:1px solid var(--line);border-radius:14px;background:rgba(3,18,30,.38)}.text-product-grid h3{margin:0 0 5px;color:var(--gold-2);font-size:16px}.text-product-grid p{margin:0;color:var(--muted);font-size:13px}.service-title{margin:0 0 10px;font-size:19px}.service-link-grid{display:flex;flex-wrap:wrap;gap:8px;margin:0}.service-link-grid a{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(3,18,30,.36);text-decoration:none;color:#e9f7fa;font-size:13px;font-weight:750}.service-link-grid a:hover{border-color:rgba(240,190,62,.5);color:var(--gold-2)}.business-summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}.business-summary h3{margin:0 0 5px;font-size:19px}.business-summary a{white-space:nowrap}.business-summary .summary-cta{display:inline-flex;padding:10px 15px;border:1px solid rgba(240,190,62,.45);border-radius:999px;color:var(--gold-2);text-decoration:none;font-weight:800}.seo-footer-links{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:12px}.seo-footer-links a{text-align:left!important;font-size:13px}@media(max-width:960px){.text-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.search-content{padding:21px}.text-product-grid{grid-template-columns:1fr}.business-summary{grid-template-columns:1fr}.business-summary a{white-space:normal}.business-summary .summary-cta{justify-content:center}}
 
 /* Category-first catalog — visual layer only; product data and admin schema stay unchanged. */
 .hero-visual{display:grid;place-items:center;isolation:isolate}.hero-presenter-stage{position:relative;width:min(590px,100%);min-height:585px;display:grid;place-items:end center}.hero-presenter-stage::before{content:"";position:absolute;z-index:-1;top:8%;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(40,132,187,.32),rgba(11,89,96,.11) 48%,transparent 70%);filter:blur(4px)}.hero-presenter-cutout{display:block;width:min(455px,82%);height:auto;filter:drop-shadow(0 28px 34px rgba(0,0,0,.36));animation:presenter-float 5s ease-in-out infinite}.hero-speech{position:absolute;z-index:3;right:-8px;bottom:32px;width:min(330px,72%);padding:17px 18px 15px;border:1px solid rgba(255,255,255,.38);border-radius:22px 22px 5px 22px;text-decoration:none;color:#17210d;background:linear-gradient(145deg,#ffe379,#efb62d);box-shadow:0 18px 38px rgba(0,0,0,.29);transition:.2s ease}.hero-speech::after{content:"";position:absolute;right:18px;bottom:-14px;border-width:15px 0 0 20px;border-style:solid;border-color:transparent transparent transparent #efb62d}.hero-speech strong{display:block;font-size:18px;line-height:1.45}.hero-speech small{display:flex;align-items:center;gap:7px;margin-top:8px;color:#263718;font-size:13px;font-weight:900}.hero-speech small span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;color:#fff;background:#00b900;font-size:10px}.hero-speech:hover{transform:translateY(-4px);box-shadow:0 23px 46px rgba(0,0,0,.34)}@keyframes presenter-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
@@ -157,30 +157,6 @@ html,body{overflow-x:hidden}
       </div>
     </section>
 
-    <section class="search-content shell" aria-labelledby="product-text-title">
-      <span class="eyebrow">ข้อมูลสินค้าแบบข้อความ</span>
-      <h2 id="product-text-title">วัตถุดิบราคาส่งที่เลือกดูได้บน BMF</h2>
-      <p>คงภาพใบเสนอราคาทั้งหมดไว้เหมือนเดิม พร้อมเพิ่มชื่อและคำอธิบายแบบ HTML เพื่อให้ผู้ใช้ ระบบค้นหา และผู้ช่วย AI เข้าใจหมวดสินค้าได้โดยไม่ต้องอ่านข้อความจากภาพ ราคาจริงอาจเปลี่ยนตามรอบสินค้า กรุณาสอบถามทีมงานก่อนสั่งซื้อ</p>
-      <div class="text-product-grid">
-        <article><h3>หมูหมักและสามชั้นหมัก</h3><p>กลุ่มหมูหมักสำหรับร้านหมูกระทะ บุฟเฟต์ และการจัดชุดวัตถุดิบ</p></article>
-        <article><h3>หมูสไลด์และตับสไลด์</h3><p>มีหมูแท้สไลด์ สะโพกสไลด์ ชาบูสไลด์ และตับสไลด์ในแค็ตตาล็อก</p></article>
-        <article><h3>เนื้อสำหรับหมูกระทะและชาบู</h3><p>กลุ่มเนื้อวัวและเนื้อสไลด์สำหรับร้านอาหาร</p></article>
-        <article><h3>อาหารทะเล หมึก และดอลลี่</h3><p>วัตถุดิบทะเลและแช่แข็งที่ควรยืนยันรายการและรอบสินค้ากับแอดมิน</p></article>
-        <article><h3>ลูกชิ้นและอาหารแช่แข็ง</h3><p>หมวดลูกชิ้น ของแปรรูป เต้าหู้ปลา ปูอัด ชีส และวัตถุดิบเสริม</p></article>
-        <article><h3>ของทอด น้ำจิ้ม และหัวเชื้อน้ำซุป</h3><p>รายการเสริมสำหรับจัดเมนูและระบบครัวให้ครบหมวด</p></article>
-      </div>
-      <h2>ข้อมูลสำหรับร้านแต่ละประเภท</h2>
-      <div class="service-link-grid">
-        <a href="/wholesale-mookata/">วัตถุดิบหมูกระทะราคาส่ง →</a><a href="/shabu-supplies/">วัตถุดิบร้านชาบู →</a><a href="/seafood-wholesale/">อาหารทะเลราคาส่ง →</a><a href="/restaurant-startup/">คู่มือเตรียมเปิดร้าน →</a><a href="/delivery/">การจัดส่งและเงื่อนไข →</a><a href="/about-bmf/">เกี่ยวกับ BMF →</a>
-      </div>
-      <div class="business-summary">
-        <h2>BMF ทะเลสด-ฟรีซ จากมหาชัย</h2>
-        <p>BMF เป็นผู้จำหน่ายวัตถุดิบอาหารทะเล เนื้อหมู เนื้อวัว ลูกชิ้น และวัตถุดิบสำหรับร้านหมูกระทะ ชาบู บุฟเฟต์ และร้านอาหาร มีฐานธุรกิจอยู่ที่มหาชัย จังหวัดสมุทรสาคร และจัดส่งทั่วประเทศไทยตามเงื่อนไขพื้นที่และรอบขนส่ง</p>
-        <ul><li>รวมวัตถุดิบราคาส่งหลายหมวดในที่เดียว</li><li>ช่วยจัดรายการสำหรับร้านเปิดใหม่และร้านที่ดำเนินกิจการอยู่</li><li>มีใบเสนอราคาออนไลน์และทีมงานช่วยแนะนำสินค้า</li><li>ช่วยวางรายการให้เหมาะกับเมนู จำนวนโต๊ะ และงบประมาณของร้าน</li></ul>
-        <p>สอบถามและสั่งซื้อผ่าน LINE Official ID <strong>@698ymiro</strong> หรือ <a href="https://www.openlink.co/bmf" target="_blank" rel="noopener">ดูคลิปรีวิวและช่องทาง BMF</a></p>
-      </div>
-    </section>
-
     <section id="shipping-rates" class="shipping-rates shell" aria-labelledby="shipping-rates-title">
       <a class="shipping-rates-media" href="assets/shipping-rates.webp" target="_blank" rel="noopener" aria-label="เปิดดูตารางค่าขนส่งแบบเต็มภาพ">
         <img src="assets/shipping-rates.webp" alt="ตารางค่าขนส่งและค่าโฟม BMF Seafood ตามน้ำหนักสินค้า" width="1024" height="1536" loading="lazy">
@@ -206,6 +182,26 @@ html,body{overflow-x:hidden}
       <div class="closing-actions">
         <a class="button order-button" href="order/">🛒 สั่งซื้อสินค้าออนไลน์ <span>→</span></a>
         <a class="button secondary track-line" href="https://lin.ee/efzRzmW" target="_blank" rel="noopener">คุยกับทีม BMF ทาง LINE</a>
+      </div>
+    </section>
+
+    <section class="search-content shell" aria-labelledby="product-text-title">
+      <span class="eyebrow">เลือกสินค้าให้เหมาะกับร้าน</span>
+      <h2 id="product-text-title">วัตถุดิบครบสำหรับหมูกระทะ ชาบู และร้านอาหาร</h2>
+      <p>เลือกดูหมวดวัตถุดิบหลัก แล้วสอบถามราคาและรอบสินค้าล่าสุดกับทีม BMF ก่อนสั่งซื้อ</p>
+      <div class="text-product-grid">
+        <article><h3>หมูหมักและหมูสไลด์</h3><p>หมูหมัก สามชั้น สะโพก ชาบูสไลด์ และตับสไลด์</p></article>
+        <article><h3>เนื้อวัวและเนื้อสไลด์</h3><p>เนื้อสำหรับร้านหมูกระทะ ชาบู บุฟเฟต์ และร้านอาหาร</p></article>
+        <article><h3>อาหารทะเลและของแช่แข็ง</h3><p>หมึก ดอลลี่ อาหารทะเล เต้าหู้ปลา ปูอัด และชีส</p></article>
+        <article><h3>ลูกชิ้น ของทอด และเครื่องปรุง</h3><p>ลูกชิ้น ของแปรรูป ของทอด น้ำจิ้ม และหัวเชื้อน้ำซุป</p></article>
+      </div>
+      <h3 class="service-title">กำลังวางแผนร้านแบบไหน?</h3>
+      <nav class="service-link-grid" aria-label="ข้อมูลสำหรับร้านอาหารแต่ละประเภท">
+        <a href="/wholesale-mookata/">วัตถุดิบหมูกระทะราคาส่ง →</a><a href="/shabu-supplies/">วัตถุดิบร้านชาบู →</a><a href="/seafood-wholesale/">อาหารทะเลราคาส่ง →</a><a href="/restaurant-startup/">คู่มือเตรียมเปิดร้าน →</a><a href="/delivery/">การจัดส่งและเงื่อนไข →</a><a href="/about-bmf/">เกี่ยวกับ BMF →</a>
+      </nav>
+      <div class="business-summary">
+        <div><h3>BMF ทะเลสด-ฟรีซ จากมหาชัย</h3><p>จำหน่ายวัตถุดิบราคาส่งและช่วยจัดรายการให้เหมาะกับเมนู จำนวนโต๊ะ และงบประมาณของร้าน จัดส่งทั่วไทยตามเงื่อนไขพื้นที่และรอบขนส่ง</p></div>
+        <a class="summary-cta track-line" href="https://lin.ee/efzRzmW" target="_blank" rel="noopener">ให้ทีม BMF ช่วยจัดรายการ →</a>
       </div>
     </section>
   </main>
