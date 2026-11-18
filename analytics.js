@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   // ใส่ Measurement ID จริงเพียงจุดเดียว เช่น G-XXXXXXXXXX หลังเจ้าของเว็บยืนยันบัญชี GA4
-  var configuredId='';
+  var configuredId='G-CKQP1RTZ58';
   var id=(document.querySelector('meta[name="bmf-ga4-id"]')||{}).content||configuredId;
   if(/^G-[A-Z0-9]+$/i.test(id)){
     window.dataLayer=window.dataLayer||[];
