@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root=path.resolve(import.meta.dirname,'..');
-const pages=['index.html','order/index.html','wholesale-mookata/index.html','shabu-supplies/index.html','seafood-wholesale/index.html','restaurant-startup/index.html','delivery/index.html','about-bmf/index.html'];
+const pages=['index.html','order/index.html','wholesale-mookata/index.html','shabu-supplies/index.html','seafood-wholesale/index.html','restaurant-startup/index.html','delivery/index.html','about-bmf/index.html','privacy/index.html'];
 const failures=[];
 const pass=[];
 const assert=(condition,message)=>condition?pass.push(message):failures.push(message);
