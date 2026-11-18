@@ -67,6 +67,11 @@ html,body{overflow-x:hidden}
 .hero{position:relative;padding-bottom:128px}.hero-category-guide{position:absolute;left:0;right:auto;bottom:32px;margin:0}.hero-category-guide::after{right:auto;left:28px}
 @media(max-width:640px){.hero{padding-bottom:38px}.hero-category-guide{position:relative;left:auto;bottom:auto;margin:-18px 5px 0 auto}}
 
+.review-showcase{margin-bottom:82px;padding:34px;border:1px solid rgba(71,159,255,.22);border-radius:28px;background:linear-gradient(145deg,rgba(5,24,43,.96),rgba(8,47,72,.88));box-shadow:var(--shadow)}
+.review-showcase-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.review-showcase-head h2{margin:.2em 0;font-size:clamp(30px,4vw,46px);line-height:1.18}.review-showcase-head p{max-width:640px;margin:0;color:var(--muted)}
+.review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.review-card{position:relative;display:block;min-width:0;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:21px;color:#fff;text-decoration:none;background:#071827;box-shadow:0 16px 38px rgba(0,0,0,.25);transition:.2s ease}.review-card:hover{transform:translateY(-5px);border-color:rgba(255,216,108,.68);box-shadow:0 23px 44px rgba(0,0,0,.34)}.review-cover{position:relative;aspect-ratio:9/16;overflow:hidden;background:#071827}.review-cover::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(2,10,18,.96))}.review-cover img{display:block;width:100%;height:100%;object-fit:cover}.review-platform{position:absolute;z-index:2;top:12px;left:12px;padding:6px 10px;border-radius:999px;color:#fff;background:rgba(24,93,178,.94);font-size:11px;font-weight:900}.review-play{position:absolute;z-index:2;right:14px;bottom:14px;display:grid;place-items:center;width:43px;height:43px;border-radius:50%;color:#152110;background:var(--gold-2);font-size:18px;box-shadow:0 8px 22px rgba(0,0,0,.3)}.review-copy{position:absolute;z-index:2;left:0;right:58px;bottom:0;padding:18px}.review-copy small{display:block;margin-bottom:5px;color:#93dce6;font-weight:800}.review-copy strong{display:block;font-size:clamp(16px,1.65vw,22px);line-height:1.35}.review-more{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--gold-2);font-weight:800;text-decoration:none}.review-more:hover{text-decoration:underline}
+@media(max-width:700px){.review-showcase{margin-bottom:62px;padding:22px 14px;border-radius:21px}.review-showcase-head{align-items:flex-start;flex-direction:column}.review-grid{grid-template-columns:repeat(3,minmax(230px,72vw));overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}.review-card{scroll-snap-align:start}.review-copy strong{font-size:17px}}
+
 </style>
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -155,6 +160,25 @@ html,body{overflow-x:hidden}
         <p>ดูรายการทั้งหมดใน Google Drive หรือติดต่อทีมงานเพื่อเช็กราคาล่าสุด</p>
         <a class="button secondary" href="https://drive.google.com/drive/folders/1rvKSvNDWlSyFdHASccVQ2juXro86b4Hk?usp=sharing" target="_blank" rel="noopener">เปิดรายการราคาทั้งหมด</a>
       </div>
+    </section>
+
+    <section class="review-showcase shell" aria-labelledby="review-showcase-title">
+      <div class="review-showcase-head">
+        <div><span class="eyebrow">คลิปผลงานจริงจาก BMF</span><h2 id="review-showcase-title">ตัวอย่างร้านที่ BMF ช่วยจัดวัตถุดิบ</h2></div>
+        <p>ดูภาพรวมงบประมาณ รูปแบบร้าน และสินค้าที่ใช้จากคลิปต้นทางบน Facebook โดยไม่โหลดไฟล์วิดีโอบนเว็บไซต์</p>
+      </div>
+      <div class="review-grid">
+        <a class="review-card" href="https://www.facebook.com/reel/3014471768896510" target="_blank" rel="noopener" aria-label="ดูคลิปเปิดร้านทะเลเผาและหมูกระทะ งบไม่เกิน 1 แสน บน Facebook">
+          <div class="review-cover"><img src="assets/reviews/latest-06.avif" alt="หน้าปกคลิปเปิดร้านทะเลเผาและหมูกระทะ ในงบไม่เกินหนึ่งแสนบาท" width="1080" height="1920" loading="lazy"><span class="review-platform">Facebook Reels</span><div class="review-copy"><small>ร้านเปิดใหม่ · งบประมาณ</small><strong>เปิดร้านทะเลเผาและหมูกระทะ งบไม่เกิน 1 แสน</strong></div><span class="review-play" aria-hidden="true">▶</span></div>
+        </a>
+        <a class="review-card" href="https://www.facebook.com/reel/1512267844299858" target="_blank" rel="noopener" aria-label="ดูคลิปเปิดร้านทะเลเผา งบไม่ถึง 2 แสน บน Facebook">
+          <div class="review-cover"><img src="assets/reviews/latest-03.avif" alt="หน้าปกคลิปเปิดร้านทะเลเผา ในงบไม่ถึงสองแสนบาท" width="1080" height="1920" loading="lazy"><span class="review-platform">Facebook Reels</span><div class="review-copy"><small>ร้านทะเลเผา · ชัยภูมิ</small><strong>เปิดร้านทะเลเผา งบไม่ถึง 2 แสน</strong></div><span class="review-play" aria-hidden="true">▶</span></div>
+        </a>
+        <a class="review-card" href="https://www.facebook.com/reel/1107670395402669" target="_blank" rel="noopener" aria-label="ดูคลิปร้านหมูกระทะชั่งกิโลและหมาล่าชั่งขีด บน Facebook">
+          <div class="review-cover"><img src="assets/reviews/latest-05.avif" alt="หน้าปกคลิปร้านหมูกระทะชั่งกิโลและร้านหมาล่าชั่งขีด" width="1080" height="1920" loading="lazy"><span class="review-platform">Facebook Reels</span><div class="review-copy"><small>พาชมร้านลูกค้า</small><strong>ร้านหมูกระทะชั่งกิโลและหมาล่าชั่งขีด</strong></div><span class="review-play" aria-hidden="true">▶</span></div>
+        </a>
+      </div>
+      <a class="review-more" href="https://www.facebook.com/Saleddd/reels/" target="_blank" rel="noopener">ดูคลิปทั้งหมดของ BMF บน Facebook <span aria-hidden="true">→</span></a>
     </section>
 
     <section id="shipping-rates" class="shipping-rates shell" aria-labelledby="shipping-rates-title">
