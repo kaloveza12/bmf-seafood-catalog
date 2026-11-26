@@ -136,7 +136,7 @@ html,body{overflow-x:hidden}
       <article><span>LINE</span><div><strong>ปิดการขายกับทีมจริง</strong><small>สอบถามและสั่งซื้อได้สะดวก</small></div></article>
     </section>
 
-    <section class="catalog shell" aria-labelledby="catalog-title">
+    <section id="catalog" class="catalog shell" aria-labelledby="catalog-title">
       <div class="section-heading">
         <div class="catalog-title-wrap"><span class="eyebrow">BMF SEAFOOD &amp; FROZEN</span><h2 id="catalog-title">เลือก <span>รายการตามหมวดหมู่</span></h2><p class="catalog-lead">วัตถุดิบคุณภาพสำหรับร้านหมูกระทะ ชาบู บุฟเฟต์ และร้านอาหาร</p></div>
         <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="ค้นหาหมวดหรือชื่อรายการ" autocomplete="off"></label>
@@ -314,13 +314,19 @@ const fallbackProducts=[
 let products=fallbackProducts;
 
 const labels={pork:'หมู',beef:'เนื้อ',frozen:'ของแช่ฟรีส',seafood:'ทะเล',meatballs:'ลูกชิ้นต่างๆ',fried:'ของทอด',sauce:'น้ำจิ้มและหัวเชื้อน้ำซุป',all:'ตารางราคาทั้งหมด'};
-let activeCategory='pork';let filtered=[];let lightboxIndex=0;
+const categoryFromUrl = new URLSearchParams(location.search).get('category');
+let activeCategory = Object.hasOwn(labels, categoryFromUrl) ? categoryFromUrl : 'pork';let filtered=[];let lightboxIndex=0;
 const grid=document.querySelector('#productGrid');const count=document.querySelector('#resultCount');const empty=document.querySelector('#emptyState');const search=document.querySelector('#searchInput');
 
 function getVisible(){const query=search.value.trim().toLocaleLowerCase('th');return products.filter(product=>{const inCategory=activeCategory==='all'||product.categories.includes(activeCategory);const text=`${product.title} ${product.categories.map(key=>labels[key]).join(' ')}`.toLocaleLowerCase('th');return inCategory&&(!query||text.includes(query));});}
 function renderCategoryCards(){document.querySelectorAll('.category-tabs button').forEach(button=>{const category=button.dataset.category;const categoryProducts=category==='all'?products:products.filter(product=>product.categories.includes(category));const image=button.querySelector('.category-card-media img');const categoryCount=button.querySelector('[data-category-count]');if(image&&categoryProducts[0]){image.src=categoryProducts[0].src;image.alt=`ตัวอย่างหมวด${labels[category]}`;}if(categoryCount)categoryCount.textContent=`${categoryProducts.length} ภาพราคา`;button.setAttribute('aria-label',`${labels[category]} ${categoryProducts.length} ภาพราคา`);});}
 function render(){filtered=getVisible();grid.innerHTML='';empty.hidden=filtered.length>0;count.textContent=`${filtered.length} รายการในหมวด “${labels[activeCategory]}”`;
   filtered.forEach((product,index)=>{const article=document.createElement('article');article.className='product-card';article.tabIndex=0;article.setAttribute('aria-label',`เปิดดู ${product.title}`);const imageClass=product.fit==='contain'?' class="fit-contain"':'';article.innerHTML=`<div class="image-wrap"><img${imageClass} src="${product.src}" alt="${product.title}" loading="lazy" width="800" height="1067"></div><div class="card-body"><div><strong>${product.title}</strong><small>ภาพที่ ${product.id}</small></div><span class="view-icon" aria-hidden="true">↗</span></div>`;article.addEventListener('click',()=>openLightbox(index));article.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(index)}});grid.append(article);});}
+document.querySelectorAll('.category-tabs button').forEach(tab => {
+  const selected = tab.dataset.category === activeCategory;
+  tab.classList.toggle('active', selected);
+  tab.setAttribute('aria-selected', String(selected));
+});
 document.querySelectorAll('.category-tabs button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.category-tabs button').forEach(tab=>{tab.classList.remove('active');tab.setAttribute('aria-selected','false')});button.classList.add('active');button.setAttribute('aria-selected','true');activeCategory=button.dataset.category;render();document.querySelector('#productGrid').scrollIntoView({behavior:'smooth',block:'start'});}));search.addEventListener('input',render);
 
 const dialog=document.querySelector('#lightbox');const dialogImage=document.querySelector('#lightboxImage');const dialogCaption=document.querySelector('#lightboxCaption');
